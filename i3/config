@@ -170,7 +170,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # Polybar Config
-exec --no-startup-id polybar.sh
+exec --no-startup-id $HOME/.config/i3/polybar.sh
 
 # Wallpaper config
 exec --no-startup-id nitrogen --restore
@@ -197,3 +197,12 @@ exec --no-startup-id set-prop 14 334 -79 -79
 # Settings for Horizontal Scrolling
 exec --no-startup-id xinput set-prop 14 336 1 1
 
+# Brightness related controls
+
+bindsym X86MonBrightnessUp exec notify-send "Brightness Up"
+bindsym X86MonBrightnessDown exec --no-startup-id light -D 10
+
+# Natural Scrolling Config
+
+xinput set-prop 14 334 -79 -79
+xinput set-prop 14 336 1
