@@ -14,5 +14,8 @@ echo "Linked Rofi config..."
 ln -nfs "$HOME/dotfiles/polybar" "$HOME/.config/polybar"
 echo "Linked Polybar config..."
 
+ln -nfs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
+echo "Linked zsh config..."
+
 echo "Task Completed!"
 
