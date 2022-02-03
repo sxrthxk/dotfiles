@@ -1,0 +1,15 @@
+configuration {
+display-drun: "Applications";
+modi: "drun,run,window";
+show-icons: true;
+icon-theme: "Papirus";
+padding: 20;
+font: "MesloLGS NF 14";
+line-margin: 4;
+line-padding: 4;
+separator-style: "dash";
+  }
+  
+@theme "theme.rasi"
+
+
