@@ -5,3 +5,8 @@
 - zshrc
 
 Would be adding more later.
+
+### Dependencies:
+` -i3-wm
+  - polybar
+ `
