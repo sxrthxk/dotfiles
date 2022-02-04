@@ -18,7 +18,9 @@ Also planning to add picom, dunst and alacritty.
 
 ## Install
 
-```git clone https://github.com/sxrthxk/dotfiles.git ~/```
+```bash
+git clone https://github.com/sxrthxk/dotfiles.git ~/
+```
 
 Note: Run `./setup.sh` to automatically symlink the files/folders.
  
