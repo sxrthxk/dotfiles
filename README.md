@@ -10,6 +10,7 @@ Would be adding more later.
  - i3-wm
  - polybar
  - rofi
+ - Nitrogen (Wallpaper Manager)
  - Emacs (Especially for Org mode and Lisp programming)
  - zsh (oh-my-zsh with powerlevel10k theme)
  - LunarVim as default text editor / still learning NvChad
