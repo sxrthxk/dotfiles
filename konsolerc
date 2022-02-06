@@ -1,0 +1,33 @@
+[Desktop Entry]
+DefaultProfile=Profile 5.profile
+
+[DownloadDialog Settings]
+Height 1080=499
+Height 864=494
+Width 1536=700
+Width 1920=700
+
+[Favorite Profiles]
+Favorites=
+
+[KFileDialog Settings]
+Recent Files[$e]=aesthetics-grunge-vintage-retro.jpg,file:$HOME/Downloads/aesthetics-grunge-vintage-retro.jpg
+Recent URLs[$e]=file:$HOME/Downloads/
+detailViewIconSize=0
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 1080=974
+Height 540=496
+Height 864=382
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB1QAAAPOAAAABAAAAAQAAAAIAAAACPwAAAAA
+TerminalMargin=7
+ToolBarsMovable=Disabled
+Width 1536=1536
+Width 1920=1876
+Width 960=476
+Window-Maximized 1080x1920=true
+Window-Maximized 864x1536=true

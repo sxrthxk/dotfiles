@@ -30,7 +30,7 @@ font pango:MesloLGS NF 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -177,7 +177,7 @@ exec --no-startup-id nitrogen --restore
 
 for_window [class=".*"] border pixel 2
 gaps inner 5
-gaps outer 10
+gaps outer 7
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
@@ -199,10 +199,17 @@ exec --no-startup-id xinput set-prop 14 336 1 1
 
 # Brightness related controls
 
-bindsym X86MonBrightnessUp exec notify-send "Brightness Up"
-bindsym X86MonBrightnessDown exec --no-startup-id light -D 10
+# bindsym XF86MonBrightnessUp exec --no-startup-id light -A 20
+# bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 20%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 20%-
 
 # Natural Scrolling Config
 
-exec --no-startup-d xinput set-prop 14 334 -79 -79
-exec --no-startup-d xinput set-prop 14 336 1
+exec --no-startup-id xinput set-prop 14 334 -79 -79
+exec --no-startup-id xinput set-prop 14 336 1
+
+# desktop compositor
+
+exec --no-startup-id picom &
