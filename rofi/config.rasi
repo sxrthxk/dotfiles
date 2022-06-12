@@ -1,6 +1,6 @@
 configuration {
 display-drun: "Applications";
-modi: "drun,run,window";
+modi: "drun,run,window,emoji";
 show-icons: true;
 icon-theme: "Papirus";
 padding: 20;

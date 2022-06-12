@@ -88,6 +88,8 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+# bindym Mod1+Tab workspace prev
+bindsym Mod1+Tab exec --no-startup-id rofi -modi combi -combi-modi window -show combi
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -192,19 +194,24 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # Scrolling config
 
 # Settings for Natual Scrolling
-exec --no-startup-id set-prop 14 334 -79 -79
+
+exec --no-startup-id xinput set-prop $(xinput | grep Touchpad | grep -Eo 'id=.{2}' | grep -Eo '[0-99]{2}') $(xinput list-props $(xinput | grep Touchpad | grep -Eo 'id=.{2}' | grep -Eo '[0-99]{2}') | grep "Synaptics Scrolling Distance" | grep  -Eo '\([0-9]{3}\)' | tr -d '()') -79 -79
 
 # Settings for Horizontal Scrolling
-exec --no-startup-id xinput set-prop 14 336 1 1
+exec --no-startup-id xinput set-prop $(xinput | grep Touchpad | grep -Eo 'id=.{2}' | grep -Eo '[0-99]{2}') $(xinput list-props $(xinput | grep Touchpad | grep -Eo 'id=.{2}' | grep -Eo '[0-99]{2}') | grep "Synaptics Two-Finger Scrolling" | grep  -Eo '\([0-9]{3}\)' | tr -d '()') 1 1
 
 # Brightness related controls
 
 # bindsym XF86MonBrightnessUp exec --no-startup-id light -A 20
 # bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 20%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 20%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
 
+# Volume related cotrols
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 # Natural Scrolling Config
 
 exec --no-startup-id xinput set-prop 14 334 -79 -79
@@ -213,3 +220,15 @@ exec --no-startup-id xinput set-prop 14 336 1
 # desktop compositor
 
 exec --no-startup-id picom &
+
+# emoji shortcut
+
+bindsym $mod+0x2e exec --no-startup-id rofimoji
+
+# emacs shortcut
+
+bindsym $mod+Ctrl+e exec --no-startup-id emacs -fs
+
+# emacs everywhere
+
+bindsym Mod1+e exec --no-startup-id emacsclient --eval "(emacs-everywhere)"

@@ -26,5 +26,9 @@ mv "$HOME/.config/konsolerc" "$HOME/backup/"
 ln -nfs "$HOME/dotfiles/konsolerc" "$HOME/.config/konsolerc"
 echo "Linked konsole complete"
 
+mv "$HOME/.doom.d" "$HOME/backup/"
+ln -nfs "$HOME/dotfiles/.doom.d" "$HOME/.doom.d"
+echo "Linked Doom Config"
+
 echo "Task Completed!"
 
