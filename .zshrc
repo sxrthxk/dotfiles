@@ -148,6 +148,7 @@ alias npl="npm install --legacy-peer-deps"
 alias vi="nvim"
 alias vim="nvim"
 alias cd="z"
+alias lg="lazygit"
 alias ring="afplay /System/Library/Sounds/Funk.aiff"
 . "/Users/sarthakgupta/.deno/env"
 # Initialize zsh completions (added by deno install script)

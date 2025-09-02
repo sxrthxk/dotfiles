@@ -1,0 +1,12 @@
+os:
+  editPreset: 'nvim'
+customCommands:
+  - key: "<c-c>"
+    context: "files"
+    prompts:
+      - type: "input"
+        title: "Add Commit Message"
+        key: "Message"
+    command: git commit -m "[$(git branch --show-current)]:{{.Form.Message}}"
+    description: "Custom commit message"
+    output: terminal
