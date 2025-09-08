@@ -141,6 +141,7 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="(pwd):$PATH"
 alias nrd="npm run dev"
 alias nri="npm run ios -- --udid ED19F5E8-2610-46F0-BEB8-58E203971AF4"
+alias li="eza -l --icons --git -a"
 function https-server() {
   http-server --ssl --cert ~/.localhost-ssl/localhost.crt --key ~/.localhost-ssl/localhost.key
 }
