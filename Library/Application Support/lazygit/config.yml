@@ -5,7 +5,7 @@ customCommands:
     context: "files"
     prompts:
       - type: "input"
-        title: "Add Commit Message"
+        title: "Commit Message with Branch Name"
         key: "Message"
     command: git commit -m "[$(git branch --show-current)]:{{.Form.Message}}"
     description: "Custom commit message"
