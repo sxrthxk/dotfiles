@@ -23,10 +23,10 @@ fi
 
 # Install required packages
 if [[ "$PKG_MANAGER" == "brew" ]]; then
-  brew install eza yazi zoxide tmux gh stow
+  brew install eza yazi zoxide tmux gh stow lazygit bat
 elif [[ "$PKG_MANAGER" == "apt" ]]; then
   sudo apt update
-  sudo apt install -y tmux unzip wget gh stow
+  sudo apt install -y tmux unzip wget gh stow lazygit bat
   # eza, yazi, zoxide may need manual install if not in apt repos
 fi
 
