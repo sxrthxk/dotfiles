@@ -7,7 +7,7 @@ customCommands:
       - type: "input"
         title: "Commit Message with Branch Name"
         key: "Message"
-    command: git commit -m "[$(git branch --show-current)]:{{.Form.Message}}"
+    command: 'git commit -m "[$(git branch --show-current)]: {{.Form.Message}}"'
     description: "Custom commit message"
     output: terminal
 gui:

@@ -18,6 +18,18 @@
 [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
 'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
 
+function prompt_git_identity() {
+  # Only show if inside a Git repo
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    local email=$(git config user.email 2>/dev/null)
+    if [[ "$email" == *"gmail.com" ]]; then
+      p10k segment -f cyan -i '' -t 'SG'
+    elif [[ "$email" == *"anq.finance" ]]; then
+      p10k segment -f yellow -i '🏢' -t 'ANQ'
+    fi
+  fi
+}
+
 () {
   emulate -L zsh -o extended_glob
 
@@ -30,7 +42,7 @@
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    os_icon                 # os identifier
+    git_identity            # git identifier
     dir                     # current directory
     vcs                     # git status
     prompt_char             # prompt symbol
