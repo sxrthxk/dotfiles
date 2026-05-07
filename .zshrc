@@ -9,6 +9,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -97,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -122,6 +124,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Functio for mkcd
+
+functio mkcd() {
+  mkdir $1 && cd $1
+}
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
@@ -138,7 +145,6 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export PATH="/usr/local/texlive/2024/bin/universal-darwin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
-export PATH="(pwd):$PATH"
 alias nrd="npm run dev"
 alias nri="npm run ios -- --udid ED19F5E8-2610-46F0-BEB8-58E203971AF4"
 alias li="eza -l --icons --git -a"
@@ -151,8 +157,23 @@ alias vim="nvim"
 alias cd="z"
 alias lg="lazygit"
 alias ring="afplay /System/Library/Sounds/Funk.aiff"
-. "/Users/sarthakgupta/.deno/env"
+[ -f "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit
 eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/sarthakgupta/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# pnpm
+export PNPM_HOME="/Users/sarthakgupta/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/usr/local/opt/libpq/bin:$PATH"
