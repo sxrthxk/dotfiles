@@ -110,7 +110,9 @@ esac
 [ -f "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 
 eval "$(zoxide init zsh)"
-eval "$(thefuck --alias)"
+# Commenting this as I dont't really use this anymore
+# eval "$(thefuck --alias)"
 
 # ── p10k ──────────────────────────────────────────────────────────────────────
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export BROWSER=wslview
